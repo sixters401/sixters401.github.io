@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url(image/bgrpng.png) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: absolute;
+    top: 50px;
+    width: 300px;
+    height: 480px;
+    background: #FCF4EC;
+    box-shadow: 15px 15px 30px;
+    animation: xoay 7s forwards;
+}
+
+.card .outside {
+    animation: xoay2 3s forwards;
+    animation-delay: 10s;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-origin: left;
+    background-color: #FCF4EC;
+}
+
+.card .inside {
+    animation: insidecard 1s forwards;
+    animation-delay: 10.51s;
+    position: absolute;
+    background: #FCF4EC;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.textoutside {
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    top: 45px;
+    left: 20px;
+}
+
+path {
+    stroke: #EB3F7F;
+    fill: #EB3F7F;
+    stroke-dasharray: 1800;
+    opacity: 10;
+    animation: animate 7s cubic-bezier(0, 0.1, 1, .2);
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        fill: none;
+        stroke-dashoffset: 1800;
+    }
+    30% {
+        opacity: 10;
+        fill: none;
+        stroke-dashoffset: 1800;
+    }
+    65% {
+        fill: #f59fbf;
+    }
+    100% {
+        opacity: 10;
+        fill: #EB3F7F;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes xoay {
+    0% {
+        transform: rotate(-57deg) skewX(-3deg) skewY(3deg);
+    }
+    30% {
+        transform: rotate(0deg) translate(0px, 0px);
+    }
+    100% {
+        transform: translateX(150px);
+    }
+}
+
+@keyframes xoay2 {
+    100% {
+        transform: rotateY(-180deg);
+        box-shadow: 10px 5px 30px;
+    }
+}
+
+@keyframes insidecard {
+    100% {
+        opacity: 100;
+    }
+}
